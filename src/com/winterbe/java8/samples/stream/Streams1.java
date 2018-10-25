@@ -53,7 +53,7 @@ public class Streams1 {
 
         // "DDD2", "DDD1", "CCC", "BBB3", "BBB2", "AAA2", "AAA1"
 
-
+        System.out.println(stringCollection);
         // matching
 
         boolean anyStartsWithA = stringCollection

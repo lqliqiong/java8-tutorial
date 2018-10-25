@@ -1,8 +1,10 @@
 package com.winterbe.java8.samples.stream;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -12,26 +14,30 @@ import java.util.stream.Stream;
  */
 public class Streams5 {
 
-    public static void main(String[] args) {
-        List<String> strings =
-            Arrays.asList("d2", "a2", "b1", "b3", "c");
-
-//        test1(strings);
-//        test2(strings);
-//        test3(strings);
-//        test4(strings);
-//        test5(strings);
-//        test6(strings);
-//        test7(strings);
-        test8(strings);
-    }
+//    public static void main(String[] args) {
+//        List<String> strings =
+//            Arrays.asList("d2", "a2", "b1", "b3", "c");
+//
+////        test1(strings);
+////        test2(strings);
+////        test3(strings);
+////        test4(strings);
+////        test5(strings);
+////        test6(strings);
+////        test7(strings);
+////        test8(strings);
+//
+//
+//        test77()
+//    }
 
     private static void test8(List<String> stringCollection) {
         Supplier<Stream<String>> streamSupplier =
             () -> stringCollection
                 .stream()
                 .filter(s -> s.startsWith("a"));
-
+        System.out.println(streamSupplier.get());
+        System.out.println( streamSupplier.get().anyMatch(s -> true));
         streamSupplier.get().anyMatch(s -> true);
         streamSupplier.get().noneMatch(s -> true);
     }
@@ -41,7 +47,7 @@ public class Streams5 {
         Stream<String> stream = stringCollection
             .stream()
             .filter(s -> s.startsWith("a"));
-
+//        System.out.println(stream);
         stream.anyMatch(s -> true);
         stream.noneMatch(s -> true);
     }
@@ -58,6 +64,7 @@ public class Streams5 {
                 System.out.println("anyMatch: " + s);
                 return s.startsWith("A");
             });
+        System.out.println(stringCollection);
     }
 
     private static void test5(List<String> stringCollection) {
@@ -88,7 +95,7 @@ public class Streams5 {
             })
             .filter(s -> {
                 System.out.println("filter:  " + s);
-                return s.toLowerCase().startsWith("a");
+                return s.toLowerCase().startsWith("b");
             })
             .map(s -> {
                 System.out.println("map:     " + s);
@@ -133,6 +140,74 @@ public class Streams5 {
                 return true;
             })
             .forEach(s -> System.out.println("forEach: " + s));
+    }
+
+    /**
+     * 1----
+     *     11---
+     *         ----111
+     *         ----112
+     *     12---
+     *         ---121
+     *         ---122
+     *         ---123
+     *     13---
+     *         ---131
+     *         ---132
+     *         ---133
+     *  2----
+     *     21---
+     *         ----211
+     *         ----212
+     *     22---
+     *         ---221
+     *         ---222
+     *         ---223
+     *  3----
+     *     31---
+     *         ----311
+     *         ----312
+     */
+
+
+//    private static  void test77(){
+//        //1-(全选)  21-(全选)
+//        //3-(全选)
+//        List<Long> cateIds =
+//                Arrays.asList("3", "31", "311", "312");
+//
+//
+//
+//    }
+
+    public static void main(String[] args) {
+        test78();
+    }
+    private static  void test78(){
+
+//        List<String> cateIds =
+//                Arrays.asList("1", "2", "99", "101","33"，"abc");
+        List<Long> cateIds = Arrays.asList(1L, 33L,2L, 99L, 101L,22L);
+//        cateIds.stream().sorted( (s1, s2) -> {
+//                    if(s1-s2>0){
+//                       return -1;
+//                    }
+//                    if(s1-s2<0){
+//                        return 1;
+//                    }
+//                    return 0;
+//                });
+        cateIds.stream().sorted((n1,n2)->n1.compareTo(n2)
+        );
+        System.out.println(cateIds);
+
+
+        List<Integer> list = Arrays.asList(new Integer[]{1,9,4,6,2,7,5,3});
+
+        list=list.stream().sorted((n1,n2)->n1.compareTo(n2)).collect(Collectors.toList());
+
+        System.out.println(list);
+
     }
 
 }

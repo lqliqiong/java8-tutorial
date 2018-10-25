@@ -43,5 +43,6 @@ public class Lambda2 {
 
         PersonFactory<Person> personFactory = Person::new;
         Person person = personFactory.create("Peter", "Parker");
+        System.out.println(person.toString());
     }
 }

@@ -14,7 +14,8 @@ public class Streams3 {
 
     public static void sortSequential() {
         List<String> values = new ArrayList<>(MAX);
-        for (int i = 0; i < MAX; i++) {
+        int i;
+        for (i = 0; i < MAX; i++) {
             UUID uuid = UUID.randomUUID();
             values.add(uuid.toString());
         }

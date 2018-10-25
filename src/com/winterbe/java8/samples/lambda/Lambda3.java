@@ -27,8 +27,10 @@ public class Lambda3 {
 
         Predicate<String> predicate = (s) -> s.length() > 0;
 
-        predicate.test("foo");              // true
-        predicate.negate().test("foo");     // false
+
+        System.out.println("foo, " +  predicate.test("foo"));  // true
+        System.out.println("foo,negate " +  predicate.negate().test("foo"));  // false
+        System.out.println("foo, " +  predicate.test("foo"));  // true
 
         Predicate<Boolean> nonNull = Objects::nonNull;
         Predicate<Boolean> isNull = Objects::isNull;
@@ -47,7 +49,7 @@ public class Lambda3 {
 
         // Suppliers
 
-        Supplier<Person> personSupplier = Person::new;
+        Supplier<com.winterbe.java8.samples.lambda.Person> personSupplier = com.winterbe.java8.samples.lambda.Person::new;
         personSupplier.get();   // new Person
 
 

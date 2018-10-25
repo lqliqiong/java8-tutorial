@@ -36,7 +36,7 @@ public class Streams10 {
                 new Person("Pamela", 23),
                 new Person("David", 12));
 
-//        test1(persons);
+        test1(persons);
 //        test2(persons);
 //        test3(persons);
 //        test4(persons);
@@ -44,7 +44,7 @@ public class Streams10 {
 //        test6(persons);
 //        test7(persons);
 //        test8(persons);
-        test9(persons);
+//        test9(persons);
     }
 
     private static void test1(List<Person> persons) {

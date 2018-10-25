@@ -25,7 +25,7 @@ public class LocalTime1 {
         Instant instant = clock.instant();
         Date legacyDate = Date.from(instant);
 
-
+        System.out.println(legacyDate);
         ZoneId zone1 = ZoneId.of("Europe/Berlin");
         ZoneId zone2 = ZoneId.of("Brazil/East");
 

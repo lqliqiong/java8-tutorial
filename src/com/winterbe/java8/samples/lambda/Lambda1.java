@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.IntStream;
 
 /**
  * @author Benjamin Winterberg
@@ -44,6 +45,13 @@ public class Lambda1 {
         Optional.ofNullable(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
 
         System.out.println(names3);
+
+        List<Integer> numbers = Arrays.asList(3, 5, 1, 2, 6);
+        numbers.sort(Comparator.naturalOrder());
+        System.out.println(numbers);
+
+        IntStream
+                .builder().build().max();
     }
 
 }

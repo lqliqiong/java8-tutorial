@@ -32,6 +32,7 @@ public class Streams7 {
     }
 
     static void test2() {
+        IntStream.range(1, 4) .forEach(b -> System.out.println(b));
         IntStream.range(1, 4)
             .mapToObj(num -> new Foo("Foo" + num))
             .peek(f -> IntStream.range(1, 4)

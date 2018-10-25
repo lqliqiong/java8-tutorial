@@ -18,16 +18,35 @@ public class Interface1 {
     }
 
     public static void main(String[] args) {
-        Formula formula1 = new Formula() {
-            @Override
-            public double calculate(int a) {
-                return sqrt(a * 100);
-            }
-        };
+//       int n ,i=1,j=2;
+//       n=i<j?i++:j++;
+//        System.out.println("i="+i);
+//        System.out.println("j="+j);
 
-        formula1.calculate(100);     // 100.0
-        formula1.sqrt(-23);          // 0.0
-        Formula.positive(-4);        // 0.0
+//        int i=5 ;
+//        i+=++i;
+//        System.out.println(i);
+
+        int a ;
+        char c;
+        float f;
+        double d;
+//        f=a+c+:
+
+
+
+
+//        Formula formula1 = new Formula() {
+//            @Override
+//            public double calculate(int a) {
+//                return sqrt(a * 100);
+//            }
+//        };
+//
+//        System.out.println(formula1.calculate(100));      // 100.0
+//        System.out.println(formula1.sqrt(-23));        // 0.0
+//        System.out.println(Formula.positive(-4));      // 0.0
+
 
 //        Formula formula2 = (a) -> sqrt( a * 100);
     }
